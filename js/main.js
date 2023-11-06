@@ -38,9 +38,10 @@ if (result) {
 
 
 
-const scelta = prompt ("Scegli: Pari o Dispari?", "Pari")
-const userNumber = prompt ("inserisi numero da 1 a 5", "5")
+const scelta = prompt ("Scegli: Pari o Dispari?", "pari")
+const userNumber = parseInt(prompt ("inserisi numero da 1 a 5", "5"))
 let textPOD = document.getElementById("pod")
+let textSomma = document.getElementById("somma")
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
@@ -48,10 +49,14 @@ function getRndInteger(min, max) {
 
   let x = getRndInteger(1,5)
   console.log(x);
+  let somma = userNumber + x
+  console.log(somma);
+
+textSomma.innerHTML = `${userNumber} + ${x} = ${somma}`
 
 if (userNumber % x == 0) {
     console.log("è uscito pari");
-    textPOD.innerHTML += "è uscito pari"
+    textPOD.innerHTML = "è uscito pari"
     textPOD.classList.add("green")
     textPOD.classList.remove("red")
 } else {
