@@ -29,3 +29,39 @@ if (result) {
     textHTML.classList.add("red")
     textHTML.classList.remove("green")
 }
+
+
+
+
+
+
+
+
+
+const scelta = prompt ("Scegli: Pari o Dispari?", "Pari")
+const userNumber = prompt ("inserisi numero da 1 a 5", "5")
+let textPOD = document.getElementById("pod")
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+  }
+
+  let x = getRndInteger(1,5)
+  console.log(x);
+
+if (userNumber % x == 0) {
+    console.log("è uscito pari");
+    textPOD.innerHTML += "è uscito pari"
+    textPOD.classList.add("green")
+    textPOD.classList.remove("red")
+} else {
+    console.log("è uscito dispari");
+    textPOD.innerHTML = "è uscito dispari"
+    textPOD.classList.add("red")
+    textPOD.classList.remove("green")
+}
+
+
+
+console.log(scelta);
+console.log(userNumber);
